@@ -173,6 +173,10 @@ body {
   filter: grayscale(0%) opacity(0.6);
 }
 
+#linkInstagram{
+  text-decoration: underline white 1px;
+}
+
 @keyframes scroll-marquee {
   0% {
     transform: translateX(0);
