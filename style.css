@@ -12,6 +12,7 @@
 
 body {
     background-color: black; /*borrar cuando tengamos fondo blanco*/
+    z-index: 1;
 }
 
 header {
@@ -76,6 +77,8 @@ header {
     grid-template-columns: 1fr 1fr; /* las dos columnas*/
     align-items: center; /*para alinear verticalmente el hero */
     gap: 2rem; /* para que haya espacio de 2rem entre las dos columnas */
+    position: relative;
+    z-index: 1;
 }
 
 section{
@@ -309,3 +312,42 @@ section{
         right: 0;
     }
 }
+.tech-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 2;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-marquee 20s linear infinite;
+  }
+  
+  .marquee-track img {
+    width: 100px;
+    margin: 0 40px;
+    filter: grayscale(100%) opacity(0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .marquee-track img:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%) opacity(0.6);
+  }
+  
+  @keyframes scroll-marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
