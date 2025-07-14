@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Pedro Garay</title>
+
+    <!-- RemixIcon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- Tu CSS -->
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+
+    <!-- CARRUSEL DE LOGOS DE FONDO -->
+    <div class="tech-background">
+        <div class="marquee-track">
+            <img src="assets/imgs/js.jpeg" alt="JavaScript" />
+            <img src="assets/imgs/css.png" alt="CSS" />
+            <img src="assets/imgs/html.png" alt="HTML" />
+            <img src="assets/imgs/mysql.png" alt="MySQL" />
+            <img src="assets/imgs/node.png" alt="Node.JS" />
+            <img src="assets/imgs/php.png" alt="PHP" />
+            <img src="assets/imgs/react.jpeg" alt="React.JS" />
+            <img src="assets/imgs/vscode.png" alt="Visual Studio Code" />
+            <!-- Copias extra para efecto infinito -->
+            <img src="assets/imgs/js.jpeg" alt="JavaScript" />
+            <img src="assets/imgs/css.png" alt="CSS" />
+            <img src="assets/imgs/html.png" alt="HTML" />
+            <img src="assets/imgs/mysql.png" alt="MySQL" />
+            <img src="assets/imgs/node.png" alt="Node.JS" />
+            <img src="assets/imgs/php.png" alt="PHP" />
+            <img src="assets/imgs/react.jpeg" alt="React.JS" />
+            <img src="assets/imgs/vscode.png" alt="Visual Studio Code" />
+        </div>
+    </div>
+
+    <!-- HEADER (igual al resto del sitio) -->
+    <header>
+        <a href="index.html" class="logo">Pedro M. Garay</a>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon-action">
+            <div class='bx bx-menu' id="menu-icon"></div>
+        </label>
+
+        <ul class="navlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html" style="border-bottom: 2px solid white;">Portfolio</a></li>
+            <li><a href="aboutMe.html">About me</a></li>
+            <li><a href="contactMe.html">Contact me</a></li>
+        </ul>
+    </header>
+
+    <!-- HERO DEL PORTFOLIO -->
+    <section class="portfolio-hero">
+        <h1>Mis Proyectos</h1>
+        <p>Estos son algunos de los proyectos en los que estuve trabajando.<br>
+        Todos están en mi <a href="https://github.com/PedroMG4" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="portfolio-projects">
+        <!-- Proyecto 1 -->
+        <div class="project">
+            <img src="assets/imgs/reservas.jpg" alt="Sistema de Reservas">
+            <h3>Sistema de Reservas</h3>
+            <p>App web para reservar canchas, hecha con React, Node.js y PostgreSQL.</p>
+            <a href="https://github.com/PedroMG4/reservas-app" target="_blank">
+                <i class="ri-github-line"></i> Ver en GitHub
+            </a>
+        </div>
+
+        <!-- Proyecto 2 -->
+        <div class="project">
+            <img src="assets/imgs/tablita.jpg" alt="La Tablita Web">
+            <h3>La Tablita Web</h3>
+            <p>Sitio web de e-commerce para una fiambrería, con carrito y pedidos por email.</p>
+            <a href="https://github.com/PedroMG4/la-tablita" target="_blank">
+                <i class="ri-github-line"></i> Ver en GitHub
+            </a>
+        </div>
+
+        <!-- Proyecto 3 -->
+        <div class="project">
+            <img src="assets/imgs/portfolio.jpg" alt="Portfolio Personal">
+            <h3>Portfolio Personal</h3>
+            <p>Este mismo portfolio, hecho con HTML, CSS y un poco de JavaScript.</p>
+            <a href="https://github.com/PedroMG4/portfolio" target="_blank">
+                <i class="ri-github-line"></i> Ver en GitHub
+            </a>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="portfolio-cta">
+        <p>¿Querés ver más?<br>
+        Visitá mi <a href="https://github.com/PedroMG4" target="_blank">GitHub</a> o escribime desde la <a href="contacto.html">página de contacto</a>.</p>
+    </section>
+</body>
+</html>
