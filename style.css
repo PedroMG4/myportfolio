@@ -191,6 +191,44 @@ section{
     transform: translateY(-5px);
 }
 
+.dropdown-cv {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-cv .dropdown-content {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: transparent; /* fondo translúcido */
+    backdrop-filter: blur(8px); /* efecto vidrio */
+    border-radius: 8px;
+    padding: 16px 0;
+    min-width: 140px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
+  }
+  
+  .dropdown-cv:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .dropdown-cv .dropdown-content a {
+    display: block;
+    padding: 10px 16px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+  
+  .dropdown-cv .dropdown-content a:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
 /* aca vamos a hacer mediaqueries para que la web sea responsive */
 @media (max-width:992px){
     section{
