@@ -5,56 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact me</title>
     <link rel="stylesheet" href="contactMe.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="apple-touch-icon" sizes="180x180" href="assets/imgs/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/imgs/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/imgs/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="assets/imgs/favicon_io/site.webmanifest">
-
 </head>
 <body>
-    <div class="tech-background">
-        <div class="marquee-track">
-            <img src="assets/imgs/js.jpeg" alt="JavaScript" />
-            <img src="assets/imgs/css.png" alt="CSS" />
-            <img src="assets/imgs/html.png" alt="HTML" />
-            <img src="assets/imgs/mysql.png" alt="MySQL" />
-            <img src="assets/imgs/node.png" alt="Node.JS" />
-            <img src="assets/imgs/php.png" alt="PHP" />
-            <img src="assets/imgs/react.jpeg" alt="React.JS" />
-            <img src="assets/imgs/vscode.png" alt="Visual Studio Code" />
-            <img src="assets/imgs/js.jpeg" alt="JavaScript" />
-            <img src="assets/imgs/css.png" alt="CSS" />
-            <img src="assets/imgs/html.png" alt="HTML" />
-            <img src="assets/imgs/mysql.png" alt="MySQL" />
-            <img src="assets/imgs/node.png" alt="Node.JS" />
-            <img src="assets/imgs/php.png" alt="PHP" />
-            <img src="assets/imgs/react.jpeg" alt="React.JS" />
-            <img src="assets/imgs/vscode.png" alt="Visual Studio Code" />
-            <img src="assets/imgs/js.jpeg" alt="JavaScript" />
-            <img src="assets/imgs/css.png" alt="CSS" />
-            <img src="assets/imgs/html.png" alt="HTML" />
-            <img src="assets/imgs/mysql.png" alt="MySQL" />
-            <img src="assets/imgs/node.png" alt="Node.JS" />
-            <img src="assets/imgs/php.png" alt="PHP" />
-            <img src="assets/imgs/react.jpeg" alt="React.JS" />
-            <img src="assets/imgs/vscode.png" alt="Visual Studio Code" />
+
+    <!-- ✅ Carrusel infinito -->
+    <div class="carousel">
+        <div class="carousel-track" id="carouselTrack">
+            <i class='bx bxl-javascript'></i>
+            <i class='bx bxl-css3'></i>
+            <i class='bx bxl-html5'></i>
+            <i class='bx bxl-react'></i>
+            <i class='bx bxl-nodejs'></i>
+            <i class='bx bxl-php'></i>
+            <i class='bx bxl-mysql'></i>
+            <i class='bx bxl-visual-studio'></i>
         </div>
     </div>
 
-
-
-
-    <!--Esta sección es la cabecera de la pagina web, la cual tendrá logo y barra de navegación-->
+    <!-- Header -->
     <header>
         <a href="index.html" class="logo">Pedro M. Garay</a>
-
-        <!-- truco para que el boton sea clickeable sin usar JS-->
         <input type="checkbox" name="checkbox" id="menu-toggle">
         <label for="menu-toggle" class="menu-icon-action">
             <div class='bx bx-menu' id="menu-icon"></div>
         </label>
-
 
         <ul class="navlist">
             <li><a href="index.html">Home</a></li>
@@ -64,33 +44,34 @@
         </ul>
     </header>
   
-  <!-- BODY -->
-  <section class="contact-section">
-    <h1 class="title">Contact</h1>
-    <p>You can write to me or find me on any of my social networks. 👇</p>
-  
-    <div class="contact-links">
-      <a href="pedrogaray24@gmail.com" target="_blank" rel="noopener noreferrer">
-        <i class="ri-mail-line"></i> pedrogaray24@gmail.com
-      </a>
-  
-      <a href="https://w.app/3c7el4" target="_blank" rel="noopener noreferrer">
-        <i class="ri-whatsapp-line"></i> +54 9 379 5072712
-      </a>
-  
-      <a href="https://www.instagram.com/pedromgaray/" target="_blank" rel="noopener noreferrer">
-        <i class="ri-instagram-line"></i> @pedromgaray
-      </a>
-  
-      <a href="https://github.com/PedroMG4" target="_blank" rel="noopener noreferrer">
-        <i class="ri-github-line"></i> github.com/PedroMG4
-      </a>
-  
-      <a href="https://www.linkedin.com/in/pedro-garay-730224258/" target="_blank" rel="noopener noreferrer">
-        <i class="ri-linkedin-line"></i> LinkedIn
-      </a>
-    </div>
-  </section>
-  
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h1 class="title">Contact</h1>
+        <p>You can write to me or find me on any of my social networks. 👇</p>
+
+        <div class="contact-links">
+            <a href="mailto:pedrogaray24@gmail.com" target="_blank" rel="noopener noreferrer">
+                <i class="ri-mail-line"></i> pedrogaray24@gmail.com
+            </a>
+
+            <a href="https://w.app/3c7el4" target="_blank" rel="noopener noreferrer">
+                <i class="ri-whatsapp-line"></i> +54 9 379 5072712
+            </a>
+
+            <a href="https://www.instagram.com/pedromgaray/" target="_blank" rel="noopener noreferrer">
+                <i class="ri-instagram-line"></i> @pedromgaray
+            </a>
+
+            <a href="https://github.com/PedroMG4" target="_blank" rel="noopener noreferrer">
+                <i class="ri-github-line"></i> github.com/PedroMG4
+            </a>
+
+            <a href="https://www.linkedin.com/in/pedro-garay-730224258/" target="_blank" rel="noopener noreferrer">
+                <i class="ri-linkedin-line"></i> LinkedIn
+            </a>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>

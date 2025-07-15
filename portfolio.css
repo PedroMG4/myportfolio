@@ -1,249 +1,256 @@
-
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box; /* esto mantiene el ancho y alto a pesar de padding y border */
-    font-family: 'Roboto Mono', monospace;
-    list-style: none; /* quitar los puntos y decoración de las listas*/
-    text-decoration: none; /*esto quita el subrayadod de los enlaces */
-    color: white;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* esto mantiene el ancho y alto a pesar de padding y border */
+  font-family: 'Roboto Mono', monospace;
+  list-style: none;
+  /* quitar los puntos y decoración de las listas*/
+  text-decoration: none;
+  /*esto quita el subrayadod de los enlaces */
+  color: white;
 }
 
 body {
-    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
-    background-attachment: fixed;
-    color: white;
-  }
-  
+  background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
+  background-attachment: fixed;
+  color: white;
+}
+
 
 header {
-    position: fixed; /*esto hace que el header quede fijo en la parte superior*/
-    right: 0;
-    top: 0;
-    z-index: 100; /*esto hace que el header se muestre por encima */
-    width: 100%;
-    display: flex; /*esto hara que los elementos se pongan en linea */
-    align-items: center; /* centra verticalmente */
-    justify-content: space-between; /* que los elementos se separen */
-    padding: 15px 3%;
-    background-color: transparent;
+  position: fixed;
+  /*esto hace que el header quede fijo en la parte superior*/
+  right: 0;
+  top: 0;
+  z-index: 100;
+  /*esto hace que el header se muestre por encima */
+  width: 100%;
+  display: flex;
+  /*esto hara que los elementos se pongan en linea */
+  align-items: center;
+  /* centra verticalmente */
+  justify-content: space-between;
+  /* que los elementos se separen */
+  padding: 15px 3%;
+  background-color: transparent;
 }
 
-.logo{
-    font-size: 30px;
-    font-weight: 800; /*grueso de la letra */   
+.logo {
+  font-size: 30px;
+  font-weight: 800;
+  /*grueso de la letra */
 }
 
-.navlist{
-    display: flex; /*esto sirve para que los elementos de la lista UL se pongan en línea */
+.navlist {
+  display: flex;
+  /*esto sirve para que los elementos de la lista UL se pongan en línea */
 }
 
 .navlist a {
-    margin-left: 60px;
-    font-size: 15px;
-    font-weight: 600;
-    border-bottom: 2px solid transparent; /*subrayado transparente*/
-    transition: all .5s ease; /*para animar todas las caracteristicas del navlist a*/
+  margin-left: 60px;
+  font-size: 15px;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  /*subrayado transparente*/
+  transition: all .5s ease;
+  /*para animar todas las caracteristicas del navlist a*/
 }
 
 .navlist a:hover {
-    border-bottom: 2px solid white; /*subrayado blanco que aparecera cuando pasamos por arriba con el mouse*/
-}
-
-#menu-icon{
-    display: none; /* lo pongo en none para que solo se vea cuando la paginae este colapsada*/
+  border-bottom: 2px solid white;
+  /*subrayado blanco que aparecera cuando pasamos por arriba con el mouse*/
 }
 
 #menu-icon {
-    font-size: 35px;
-    z-index: 101; /* para que este sobre el header */
-    cursor: pointer; /* para que aparezca la manito cuando ponemos el mouse encima */
+  display: none;
+  /* lo pongo en none para que solo se vea cuando la paginae este colapsada*/
 }
 
-#menu-toggle{
-    display: none; /*nunca quiero que se vea el checkbox*/
+#menu-icon {
+  font-size: 35px;
+  z-index: 101;
+  /* para que este sobre el header */
+  cursor: pointer;
+  /* para que aparezca la manito cuando ponemos el mouse encima */
 }
 
-.menu-icon-action{
-    display: none; /* para que no se le pueda hacer click*/
+#menu-toggle {
+  display: none;
+  /*nunca quiero que se vea el checkbox*/
 }
+
+.menu-icon-action {
+  display: none;
+  /* para que no se le pueda hacer click*/
+}
+
 /* ======== SECCIÓN HERO DEL PORTFOLIO ======== */
 .portfolio-hero {
-    min-height: 40vh;
-    padding: 120px 8% 40px;
-    background: transparent;
-    color: white;
-    text-align: center;
-    position: relative;
-    z-index: 1; /* sobre el carrusel */
-  }
-  
-  .portfolio-hero h1 {
-    font-size: 40px;
-    margin-bottom: 15px;
-    margin-top: 100px;
-    font-weight: 800;
-  }
-  
-  .portfolio-hero p {
-    font-size: 16px;
-    color: #ccc;
-  }
-  
-  .portfolio-hero a {
-    color: #f2bb13;
-    text-decoration: none;
-  }
-  
-  .portfolio-hero a:hover {
-    text-decoration: underline;
-  }
-  
-  /* ======== SECCIÓN DE PROYECTOS ======== */
-  .portfolio-projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    padding: 60px 8%;
-    background: transparent;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .project {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease background 0.3s ease;
-  }
-  
-  .project img {
-    width: 100%;
-    max-height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-  }
+  min-height: 40vh;
+  padding: 120px 8% 40px;
+  background: transparent;
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  /* sobre el carrusel */
+}
 
-  .project video {
+.portfolio-hero h1 {
+  font-size: 40px;
+  margin-bottom: 15px;
+  margin-top: 100px;
+  font-weight: 800;
+}
+
+.portfolio-hero p {
+  font-size: 16px;
+  color: #ccc;
+}
+
+.portfolio-hero a {
+  color: #f2bb13;
+  text-decoration: none;
+}
+
+.portfolio-hero a:hover {
+  text-decoration: underline;
+}
+
+/* ======== SECCIÓN DE PROYECTOS ======== */
+.portfolio-projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 60px 8%;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.project {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease background 0.3s ease;
+}
+
+.project img {
   width: 100%;
-  height: 180px; /* ✅ Fuerza a ocupar el mismo alto siempre */
-  object-fit: cover; /* ✅ Recorta el video manteniendo proporción */
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.project video {
+  width: 100%;
+  height: 180px;
+  /* ✅ Fuerza a ocupar el mismo alto siempre */
+  object-fit: cover;
+  /* ✅ Recorta el video manteniendo proporción */
   border-radius: 8px;
   margin-bottom: 15px;
   display: block;
 }
 
-  
-  
-  .project h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: white;
+
+
+.project h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.project p {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.project a {
+  color: #f2bb13;
+  font-size: 16px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.project a i {
+  margin-right: 5px;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.project a:hover {
+  color: #ffffff;
+}
+
+/* ======== CTA FINAL ======== */
+.portfolio-cta {
+  text-align: center;
+  padding: 40px 8% 80px;
+  background: transparent;
+  color: white;
+  position: static;
+  z-index: 1;
+}
+
+.portfolio-cta p {
+  font-size: 16px;
+}
+
+.portfolio-cta a {
+  color: #f2bb13;
+  text-decoration: none;
+}
+
+.portfolio-cta a:hover {
+  text-decoration: underline;
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 768px) {
+  .portfolio-hero h1 {
+    font-size: 32px;
   }
-  
-  .project p {
-    font-size: 14px;
-    color: #ccc;
-    margin-bottom: 15px;
-    line-height: 1.4;
+
+  .project {
+    padding: 15px;
   }
-  
-  .project a {
-    color: #f2bb13;
-    font-size: 16px;
-    text-decoration: none;
-    transition: color 0.3s ease;
+
+  .project img {
+    max-height: 150px;
   }
-  
-  .project a i {
-    margin-right: 5px;
-  }
-  
-  .project:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.1);
-  }
-  
-  .project a:hover {
-    color: #ffffff;
-  }
-  
-  /* ======== CTA FINAL ======== */
-  .portfolio-cta {
-    text-align: center;
-    padding: 40px 8% 80px;
-    background: transparent;
-    color: white;
-    position: static;
-    z-index: 1;
-  }
-  
-  .portfolio-cta p {
-    font-size: 16px;
-  }
-  
-  .portfolio-cta a {
-    color: #f2bb13;
-    text-decoration: none;
-  }
-  
-  .portfolio-cta a:hover {
-    text-decoration: underline;
-  }
-  
-  /* ======== RESPONSIVE ======== */
-  @media (max-width: 768px) {
-    .portfolio-hero h1 {
-      font-size: 32px;
-    }
-  
-    .project {
-      padding: 15px;
-    }
-  
-    .project img {
-      max-height: 150px;
-    }
-  }
-  
-  .tech-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 2;
-    opacity: 0.5;
-    pointer-events: none;
-  }
-  
-  .marquee-track {
-    display: flex;
-    width: max-content;
-    animation: scroll-marquee 20s linear infinite;
-  }
-  
-  .marquee-track img {
-    width: 100px;
-    margin: 0 40px;
-    filter: grayscale(100%) opacity(0.3);
-    transition: transform 0.3s ease;
-  }
-  
-  .marquee-track img:hover {
-    transform: scale(1.1);
-    filter: grayscale(0%) opacity(0.6);
-  }
-  
-  @keyframes scroll-marquee {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-  
+}
+
+/* --- Carrusel Infinito --- */
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  margin: 20px auto;
+  background-color: transparent; /* ✅ se ve el gradient */
+}
+
+.carousel-track {
+  display: flex;
+  gap: 40px;
+  white-space: nowrap;
+}
+
+.bx {
+  font-size: 60px;
+  color: rgba(128, 128, 128, 0.6);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.bx:hover {
+  transform: scale(1.2);
+  color: rgba(200, 200, 200, 0.9);
+}

@@ -1,49 +1,43 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
-  /* esto mantiene el ancho y alto a pesar de padding y border */
+  box-sizing: border-box; /* mantiene ancho/alto a pesar de padding y border */
   font-family: 'Roboto Mono', monospace;
-  list-style: none;
-  /* quitar los puntos y decoración de las listas*/
-  text-decoration: none;
-  /*esto quita el subrayadod de los enlaces */
+  list-style: none; /* quita puntos en listas */
+  text-decoration: none; /* quita subrayados en enlaces */
   color: white;
 }
 
-body {
-  background-color: black;
-  /*borrar cuando tengamos fondo blanco*/
+/* --- FONDO GENERAL --- */
+html, body {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
+  color: #fff;
+  background-attachment: fixed;
 }
 
 /* --- Navbar Fija --- */
 header {
-  position: fixed;
-  /*esto hace que el header quede fijo en la parte superior*/
+  position: fixed; /* header fijo arriba */
   right: 0;
   top: 0;
-  z-index: 100;
-  /*esto hace que el header se muestre por encima */
+  z-index: 100; /* encima de otros elementos */
   width: 100%;
   display: flex;
-  /*esto hara que los elementos se pongan en linea */
-  align-items: center;
-  /* centra verticalmente */
-  justify-content: space-between;
-  /* que los elementos se separen */
+  align-items: center; /* centra verticalmente */
+  justify-content: space-between; /* separa elementos */
   padding: 15px 3%;
-  background-color: transparent;
+  background-color: transparent; /* ✅ transparente para ver el gradient */
 }
 
 .logo {
   font-size: 30px;
   font-weight: 800;
-  /*grueso de la letra */
 }
 
 .navlist {
-  display: flex;
-  /*esto sirve para que los elementos de la lista UL se pongan en línea */
+  display: flex; /* elementos en línea */
 }
 
 .navlist a {
@@ -51,17 +45,13 @@ header {
   font-size: 15px;
   font-weight: 600;
   border-bottom: 2px solid transparent;
-  /*subrayado transparente*/
   transition: all .5s ease;
-  /*para animar todas las caracteristicas del navlist a*/
 }
 
 .navlist a:hover {
   border-bottom: 2px solid white;
-  /*subrayado blanco que aparecera cuando pasamos por arriba con el mouse*/
 }
 
-/* Menú hamburguesa oculto por defecto */
 #menu-icon {
   display: none;
   font-size: 28px;
@@ -76,7 +66,7 @@ header {
   display: none;
 }
 
-/* Responsive navbar */
+/* --- Responsive navbar --- */
 @media (max-width: 768px) {
   .navlist {
     position: absolute;
@@ -103,26 +93,20 @@ header {
     display: block;
   }
 
-  #menu-toggle:checked+.menu-icon-action+.navlist {
+  #menu-toggle:checked + .menu-icon-action + .navlist {
     right: 8%;
   }
 }
 
-html,
-body {
-  height: 100%;
-  width: 100%;
-}
-
-
+/* --- Sección About Me --- */
 .about-section {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 60px 20px;
-  background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
-  /*fondo de color gradiente*/
+  height: 100%;
+  background: transparent; /* ✅ ahora es transparente */
   color: #fff;
   text-align: left;
 }
@@ -142,47 +126,28 @@ body {
   margin-bottom: 16px;
 }
 
-
-.tech-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
+/* --- Carrusel Infinito --- */
+.carousel {
   overflow: hidden;
-  z-index: 2;
-  opacity: 0.5;
-  pointer-events: none;
+  width: 100%;
+  max-width: 100%;
+  margin: 20px auto;
+  background-color: transparent; /* ✅ se ve el gradient */
 }
 
-.marquee-track {
+.carousel-track {
   display: flex;
-  width: max-content;
-  animation: scroll-marquee 20s linear infinite;
+  gap: 40px;
+  white-space: nowrap;
 }
 
-.marquee-track img {
-  width: 100px;
-  margin: 0 40px;
-  filter: grayscale(100%) opacity(0.3);
-  transition: transform 0.3s ease;
+.bx {
+  font-size: 60px;
+  color: rgba(128, 128, 128, 0.6);
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.marquee-track img:hover {
-  transform: scale(1.1);
-  filter: grayscale(0%) opacity(0.6);
-}
-
-#linkInstagram{
-  text-decoration: underline white 1px;
-}
-
-@keyframes scroll-marquee {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
+.bx:hover {
+  transform: scale(1.2);
+  color: rgba(200, 200, 200, 0.9);
 }
