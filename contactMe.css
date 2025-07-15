@@ -11,17 +11,19 @@
 
 /* ✅ Fondo general */
 html, body {
-  height: 100%;
+  min-height: 100%;
+  height: auto; /* Evita espacio vacío si el contenido es menor que la pantalla */
   width: 100%;
   background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
   color: #fff;
   z-index: 1;
   background-attachment: fixed;
+  overflow-x: hidden; /* Evita scroll lateral */
 }
 
 /* ✅ HEADER */
 header {
-  position: fixed;
+  position: relative;
   right: 0;
   top: 0;
   z-index: 100;
@@ -62,7 +64,11 @@ header {
 }
 
 #menu-toggle {
-  display: none;
+  display: none; /* ✅ No se ve nunca */
+}
+
+#menu-toggle:checked {
+  display: none; /* ✅ Asegura que no quede marcado al cargar */
 }
 
 .menu-icon-action {
@@ -71,9 +77,8 @@ header {
 
 /* ✅ CONTACT SECTION */
 .contact-section {
-  min-height: 100vh;
-  padding: 120px 8% 60px;
-  background: transparent; /* usa el fondo general */
+  padding: 60px 8% 40px; /* ✅ Menos espacio abajo */
+  background: transparent;
   text-align: center;
 }
 
@@ -111,14 +116,15 @@ header {
   transform: translateX(5px);
 }
 
-/* ✅ NUEVO CARRUSEL INFINITO */
+/* ✅ CARRUSEL INFINITO */
 .carousel {
-  position: fixed;
+  position: relative; /* ✅ No fijo, se scrollea normal */
   overflow: hidden;
   width: 100%;
   max-width: 100%;
-  margin: 20px auto;
+  margin: 20px auto 0 auto; /* ✅ Sin margen extra abajo */
   background-color: transparent;
+  z-index: 1;
 }
 
 .carousel-track {
@@ -141,33 +147,37 @@ header {
 /* ✅ RESPONSIVE */
 @media (max-width: 768px) {
   .menu-icon-action {
-      display: block;
+    display: block;
   }
 
   #menu-icon {
-      display: block;
+    display: block;
   }
 
   .navlist {
-      position: absolute;
-      top: 100%;
-      right: -100%;
-      width: 200px;
-      height: 180px;
-      background-color: #021719bd;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 30px 20px;
-      transition: all .5s ease-in-out;
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 200px;
+    height: auto;
+    background-color: #021719bd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    transition: right 0.5s ease-in-out;
   }
 
   .navlist a {
-      display: block;
-      margin: 7px 0;
+    display: block;
+    margin: 7px 0;
   }
 
   #menu-toggle:checked + label.menu-icon-action + ul {
-      right: 0;
+    right: 0;
+  }
+
+  .carousel {
+    position: relative; /* ✅ Igual que en escritorio */
   }
 }

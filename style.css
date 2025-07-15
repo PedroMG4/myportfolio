@@ -9,19 +9,21 @@
     color: white;
 }
 
-/* ✅ Fondo general en todo el sitio */
+/* ✅ FONDO GENERAL */
 html, body {
-    height: 100%;
+    min-height: 100%;
+    height: auto;
     width: 100%;
     background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
     color: #fff;
     z-index: 1;
     background-attachment: fixed;
+    overflow-x: hidden;
 }
 
-/* ✅ HEADER FIJO */
+/* ✅ HEADER */
 header {
-    position: fixed;
+    position: relative;
     right: 0;
     top: 0;
     z-index: 100;
@@ -62,7 +64,7 @@ header {
 }
 
 #menu-toggle {
-    display: none;
+    display: none; /* ✅ Oculto y sin estado marcado */
 }
 
 .menu-icon-action {
@@ -71,10 +73,9 @@ header {
 
 /* ✅ HERO SECTION */
 .hero {
-    height: 100%;
     width: 100%;
     min-height: 100vh;
-    background: transparent; /* ahora usa el gradient del body */
+    background: transparent;
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -194,31 +195,26 @@ section {
     transform: translateY(-5px);
 }
 
-/* ✅ DROPDOWN CV */
+/* ✅ DROPDOWN CV (ahora desplaza el contenido) */
 .dropdown-cv {
     position: relative;
     display: inline-block;
 }
 
 .dropdown-cv .dropdown-content {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    top: 100%;
-    left: 0;
+    display: none; /* ✅ Oculto al inicio */
+    position: relative; /* ✅ Ahora en el flujo normal */
+    margin-top: 10px; /* ✅ Empuja contenido hacia abajo */
     background: transparent;
     backdrop-filter: blur(8px);
     border-radius: 8px;
     padding: 16px 0;
     min-width: 140px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 10;
 }
 
 .dropdown-cv:hover .dropdown-content {
-    opacity: 1;
-    visibility: visible;
+    display: block;
 }
 
 .dropdown-cv .dropdown-content a {
@@ -232,6 +228,57 @@ section {
 .dropdown-cv .dropdown-content a:hover {
     background: rgba(255, 255, 255, 0.1);
 }
+
+/* ✅ CARRUSEL INFINITO */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto 0 auto;
+    background-color: transparent;
+    z-index: 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 40px;
+    white-space: nowrap;
+}
+
+.bx {
+    font-size: 60px;
+    color: rgba(128, 128, 128, 0.6);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.bx:hover {
+    transform: scale(1.2);
+    color: rgba(200, 200, 200, 0.9);
+}
+
+    /* ✅ ICONOS DE REDES */
+.icons {
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.icons i {
+    display: block;
+    margin: 26px 0;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.7); /* ✅ Gris suave por defecto */
+    transition: all 0.3s ease;
+}
+
+.icons i:hover {
+    color: #f2bb13; /* ✅ Resalta con el color de tu paleta */
+    transform: translateY(-5px);
+}
+
 
 /* ✅ MEDIA QUERIES */
 @media (max-width: 992px) {
@@ -280,13 +327,22 @@ section {
         padding-top: 100px;
     }
 
+    .hero-img {
+        text-align: center; /* ✅ Centra el contenido */
+    }
+
     .hero-img img {
-        margin: 0;
+        width: 300px;
+        margin: 20px auto 0 auto; /* ✅ Centra horizontalmente */
+        display: block;
+    }
+
+    .hero-img img:hover {
+        width: 320px;
+        opacity: 0.6;
     }
 
     .hero {
-        height: 100%;
-        gap: 1rem;
         grid-template-columns: 1fr;
     }
 
@@ -295,7 +351,7 @@ section {
         top: 100%;
         right: -100%;
         width: 200px;
-        height: 180px;
+        height: auto;
         background-color: #021719bd;
         display: flex;
         flex-direction: column;
@@ -312,32 +368,16 @@ section {
     #menu-toggle:checked + label.menu-icon-action + ul {
         right: 0;
     }
-}
 
-/* ✅ CARRUSEL INFINITO NUEVO */
-.carousel {
-    overflow: hidden;
-    width: 100%;
-    max-width: 100%;
-    margin: 20px auto;
-    background-color: transparent;
-    position: fixed;
-    z-index: 0; /* queda detrás del contenido si se usa como fondo */
-}
+    .carousel {
+        position: relative;
+    }
 
-.carousel-track {
-    display: flex;
-    gap: 40px;
-    white-space: nowrap;
-}
-
-.bx {
-    font-size: 60px;
-    color: rgba(128, 128, 128, 0.6);
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.bx:hover {
-    transform: scale(1.2);
-    color: rgba(200, 200, 200, 0.9);
+    .icons {
+        position: inherit;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 40px;
+    }
 }

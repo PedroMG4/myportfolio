@@ -1,10 +1,10 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box; /* mantiene ancho/alto a pesar de padding y border */
+  box-sizing: border-box;
   font-family: 'Roboto Mono', monospace;
-  list-style: none; /* quita puntos en listas */
-  text-decoration: none; /* quita subrayados en enlaces */
+  list-style: none;
+  text-decoration: none;
   color: white;
 }
 
@@ -15,20 +15,21 @@ html, body {
   background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
   color: #fff;
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 
-/* --- Navbar Fija --- */
+/* --- HEADER --- */
 header {
-  position: fixed; /* header fijo arriba */
+  position: relative;
   right: 0;
   top: 0;
-  z-index: 100; /* encima de otros elementos */
+  z-index: 100;
   width: 100%;
   display: flex;
-  align-items: center; /* centra verticalmente */
-  justify-content: space-between; /* separa elementos */
+  align-items: center;
+  justify-content: space-between;
   padding: 15px 3%;
-  background-color: transparent; /* ✅ transparente para ver el gradient */
+  background-color: transparent;
 }
 
 .logo {
@@ -37,7 +38,7 @@ header {
 }
 
 .navlist {
-  display: flex; /* elementos en línea */
+  display: flex;
 }
 
 .navlist a {
@@ -66,8 +67,146 @@ header {
   display: none;
 }
 
-/* --- Responsive navbar --- */
+/* --- SECCIÓN ABOUT ME --- */
+.about-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 80px auto;
+}
+
+.about-content {
+  max-width: 800px;
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #f2bb13;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.about-list {
+  margin-bottom: 20px;
+}
+
+.about-list li {
+  display: flex;
+  align-items: flex-start; /* ✅ ícono alineado con la primera línea del texto */
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.about-list i {
+  font-size: 22px;
+  color: #f2bb13;
+  flex-shrink: 0; /* ✅ ícono no se deforma */
+  margin-top: 2px; /* ✅ pequeño ajuste fino */
+}
+
+
+.btn-about {
+  display: inline-block;
+  background: #f2bb13;
+  color: #131313;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-about:hover {
+  background: #d9a10f;
+  transform: translateY(-3px);
+}
+
+/* --- CARRUSEL INFINITO --- */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  margin: 20px auto;
+  background-color: transparent;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 40px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.bx {
+  font-size: 60px;
+  color: rgba(128, 128, 128, 0.6);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.bx:hover {
+  transform: scale(1.2);
+  color: rgba(200, 200, 200, 0.9);
+}
+
+/* --- ÍCONOS REDES SOCIALES --- */
+.icons {
+  position: absolute;
+  top: 50vh;
+  padding: 0 3%;
+  transform: translateY(-50%);
+}
+
+.icons i {
+  display: block;
+  margin: 26px 0;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+.icons i:hover {
+  color: #f2bb13;
+  transform: translateY(-5px);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+  .about-section {
+    margin: 40px 10px;
+    padding: 40px 20px;
+  }
+
+  .about-content h2 {
+    font-size: 2rem;
+  }
+
+  .about-content p,
+  .about-list li {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .menu-icon-action {
+    display: block;
+  }
+
+  #menu-icon {
+    display: block;
+  }
+
   .navlist {
     position: absolute;
     top: 100%;
@@ -84,71 +223,53 @@ header {
     margin: 10px 0;
   }
 
-  #menu-icon {
-    display: block;
-    z-index: 101;
-  }
-
-  .menu-icon-action {
-    display: block;
-  }
-
   #menu-toggle:checked + .menu-icon-action + .navlist {
     right: 8%;
   }
+
+  .about-section {
+    text-align: center;
+    padding: 30px 15px;
+  }
+
+  .about-list li {
+    display: block; /* ✅ ahora ícono y texto en una sola columna */
+    text-align: center; 
+    margin-bottom: 20px;
+  }
+
+  .about-list i {
+    display: block;
+    font-size: 28px;
+    margin-bottom: 8px; /* ✅ separa el ícono del texto */
+  }
+
+
+  .btn-about {
+    width: 100%;
+    text-align: center;
+  }
+
+  .icons {
+    position: inherit;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+  }
 }
 
-/* --- Sección About Me --- */
-.about-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 60px 20px;
-  height: 100%;
-  background: transparent; /* ✅ ahora es transparente */
-  color: #fff;
-  text-align: left;
-}
+@media (max-width: 480px) {
+  .about-content h2 {
+    font-size: 1.8rem;
+  }
 
-.about-content {
-  max-width: 800px;
-}
+  .about-content p,
+  .about-list li {
+    font-size: 0.95rem;
+  }
 
-.about-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.about-content p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-
-/* --- Carrusel Infinito --- */
-.carousel {
-  position: fixed;
-  overflow: hidden;
-  width: 100%;
-  max-width: 100%;
-  margin: 20px auto;
-  background-color: transparent; /* ✅ se ve el gradient */
-}
-
-.carousel-track {
-  display: flex;
-  gap: 40px;
-  white-space: nowrap;
-}
-
-.bx {
-  font-size: 60px;
-  color: rgba(128, 128, 128, 0.6);
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.bx:hover {
-  transform: scale(1.2);
-  color: rgba(200, 200, 200, 0.9);
+  .bx {
+    font-size: 40px; /* carrusel más chico en móviles */
+  }
 }

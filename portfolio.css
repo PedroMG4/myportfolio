@@ -19,7 +19,7 @@ body {
 
 
 header {
-  position: fixed;
+  position: relative;
   /*esto hace que el header quede fijo en la parte superior*/
   right: 0;
   top: 0;
@@ -87,7 +87,6 @@ header {
 
 /* ======== SECCIÓN HERO DEL PORTFOLIO ======== */
 .portfolio-hero {
-  min-height: 40vh;
   padding: 120px 8% 40px;
   background: transparent;
   color: white;
@@ -99,9 +98,7 @@ header {
 
 .portfolio-hero h1 {
   font-size: 40px;
-  margin-bottom: 15px;
-  margin-top: 100px;
-  font-weight: 800;
+    font-weight: 800;
 }
 
 .portfolio-hero p {
@@ -227,17 +224,59 @@ header {
   .project img {
     max-height: 150px;
   }
+
+  .navlist {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 200px;
+    background-color: rgba(2, 23, 25, 0.9);
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    transition: right 0.5s ease-in-out;
+  }
+
+  .navlist li {
+    margin: 10px 0;
+  }
+
+  #menu-icon {
+    display: block;
+    z-index: 101;
+  }
+
+  .menu-icon-action {
+    display: block;
+  }
+
+  #menu-toggle:checked+.menu-icon-action+.navlist {
+    right: 8%;
+  }
+
+  .about-content {
+    padding-top: 950px;
+  }
+
+  .carousel {
+    position: relative;
+    /* ✅ ahora se mueve con el contenido */
+    z-index: 1;
+  }
 }
+
 
 /* --- Carrusel Infinito --- */
 .carousel {
-  position: fixed;
+  position: relative; /* ✅ antes estaba fixed */
   overflow: hidden;
   width: 100%;
   max-width: 100%;
   margin: 20px auto;
-  background-color: transparent; /* ✅ se ve el gradient */
+  background-color: transparent;
+  z-index: 1;
 }
+
 
 .carousel-track {
   display: flex;
