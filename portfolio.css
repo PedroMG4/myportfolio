@@ -81,6 +81,7 @@ header {
   .portfolio-hero h1 {
     font-size: 40px;
     margin-bottom: 15px;
+    margin-top: 100px;
     font-weight: 800;
   }
   
@@ -124,6 +125,16 @@ header {
     border-radius: 8px;
     margin-bottom: 15px;
   }
+
+  .project video {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: block;
+  }
+  
   
   .project h3 {
     font-size: 20px;
