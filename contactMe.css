@@ -16,6 +16,7 @@ html, body {
   background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
   color: #fff;
   z-index: 1;
+  background-attachment: fixed;
 }
 
 /* ✅ HEADER */
@@ -112,6 +113,7 @@ header {
 
 /* ✅ NUEVO CARRUSEL INFINITO */
 .carousel {
+  position: fixed;
   overflow: hidden;
   width: 100%;
   max-width: 100%;

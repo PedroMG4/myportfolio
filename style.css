@@ -321,7 +321,7 @@ section {
     max-width: 100%;
     margin: 20px auto;
     background-color: transparent;
-    position: relative;
+    position: fixed;
     z-index: 0; /* queda detrás del contenido si se usa como fondo */
 }
 

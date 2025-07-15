@@ -231,6 +231,7 @@ header {
 
 /* --- Carrusel Infinito --- */
 .carousel {
+  position: fixed;
   overflow: hidden;
   width: 100%;
   max-width: 100%;
