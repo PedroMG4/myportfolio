@@ -188,6 +188,25 @@ header {
   color: #ffffff;
 }
 
+.vercelButton{
+  display: inline-flex;           /* ícono y texto en línea */
+  align-items: center;            /* centrado vertical */
+  gap: .4rem;                     /* espacio entre icono y texto */
+  text-decoration: none;          /* opcional */
+}
+
+.vercelButton .icon-netlify{
+  width: 1.1em;
+  height: 1.1em;
+  display: block;                 /* evita el “salto” de línea */
+  flex-shrink: 0;
+}
+
+.vercelButton span{
+  line-height: 1;                 /* evita desalineo por line-height */
+}
+
+
 /* ======== CTA FINAL ======== */
 .portfolio-cta {
   text-align: center;
